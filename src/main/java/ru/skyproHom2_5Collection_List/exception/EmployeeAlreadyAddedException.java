@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import ru.skyproHom2_5Collection_List.model.Employee;
 @ResponseStatus(code = HttpStatus.BAD_REQUEST)
 public class EmployeeAlreadyAddedException extends RuntimeException{
-
+    public EmployeeAlreadyAddedException (Employee employee){
+        super("Такой сотрудник уже существует" + employee.toString());
+    }
 
 }
